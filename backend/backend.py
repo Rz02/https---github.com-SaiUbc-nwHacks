@@ -1,16 +1,37 @@
 from flask import Flask, render_template, request, jsonify
 import functools
-
+import csv
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['***'] = '***'
+db = SQLAlchemy(app)
 
+#Define Database with id, bus, stop and route
+class User(db.Model):
+    id = db.Column(db.Integer, primary_jey = True)
+    bus = db.Column(db.Integer, unique = True, nullable = False)
+    stop = db.Column(db.String(80), unique = True, nullable = False)
+    route = db.Column(db.String(80), unique = True, nullable = False)
+    def __repr__(self):
+        return '<User %r>' % self.name
+
+#Main Page
 @app.route("/")
 def index():
     return 'MAIN PAGE'
 
+#Map Page
 @app.route("/map")
 def map():
     return 'MAP PAGE'
+
+#Search Page (For general sketch)
+@app.route('/search/<name>')
+def search(name):
+    user = User.query.filter_by(name = name).first()
+    return render_template('***', user = user)
+
 
 # dynamic route: 
 # 
@@ -30,6 +51,7 @@ def map():
 #     results = search_database(search_query, page)
 #     return render_template('search.html', results=results)
 
+#API Checking
 valid_api_keys = {}
 @app.route('/<api_key>/secure_route')
 def secure_route(api_key):
@@ -37,33 +59,40 @@ def secure_route(api_key):
         return jsonify(error = "Invalid API key"), 401
     return "This is a secure route"
 
+#Bus Page
 @app.route("/bus")
 def bus():
     return 'BUS PAGE'
 
+#Bus search
 @app.route('/bus/<int:bus_id>')
-def bus_num(bus_id):
+def search_bus(bus_id):
     return f"This is the bus {bus_id}"
 
   #  bus = search_database(search_query, page)
   #  return render_template('**HTML**', bus = bus)
 
+#Stop Page
 @app.route("/stop")
 def stop():
     return 'STOP PAGE'
 
+#Stop search
 @app.route('/stop/<int:stop_id>')
-def stop_num(stop_id):
+def search_stop(stop_id):
     return f"This is the station {stop_id}"
 
+#Route Page
 @app.route("/route")
 def route():
     return 'ROUTE PAGE'
 
+#Route search
 @app.route('/route/<int:sta_id>')
-def route_num(sta_id):
+def search_route(sta_id):
     return f"This is the route {sta_id}"
 
+#Q&A Page
 @app.route("/qanda")
 def qanda():
     return 'Q&A PAGE'
