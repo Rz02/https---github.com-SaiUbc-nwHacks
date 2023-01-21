@@ -14,11 +14,19 @@ def map():
 def bus():
     return 'BUS PAGE'
 
+@app.route('/bus/<int:id>')
+def bus_num(id):
+    return f"This is the bus {id}"
+
 @app.route("/station")
 def station():
     return 'STATION PAGE'
 
-@app.route("/Q&A")
+@app.route('/station/<int:id>')
+def station_num(id):
+    return f"This is the station {id}"
+
+@app.route("/qanda")
 def qanda():
     return 'Q&A PAGE'
 
