@@ -1,8 +1,6 @@
 # this file is to test out the api integration of the project
-import requests
+from tilapya import RTTI
+api = RTTI('Ik7TSY2bkJRQzeQeH5LT')
+stop = api.stop('53095')
+print(stop.Name)
 
-
-response = requests.get('https://api.translink.ca/rttiapi/v1/buses/7196?apikey=[Ik7TSY2bkJRQzeQeH5LT]')
-
-
-print(response.json())
