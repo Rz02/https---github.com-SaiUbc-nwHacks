@@ -22,41 +22,19 @@ body {
 }
 
 
-
-/* .back-img {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-
-} */
-
-
-
-
-.Background {
-    grid-column: background;
-    grid-row: background;
-    display: block;
-    box-sizing: inherit;
-}
-
-.logo {
-    width: 140px; 
-    height: 90px; 
-}
-
 .logo {
     align-items: center;
     margin-left: 1%;
+    width: 140px; 
+    height: 90px; 
 }
 
 .website {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-size: auto;
+    margin-top: 100px;
+    /* background-size: auto; */
 }
 
 
@@ -79,9 +57,12 @@ body {
     border-radius: 12px;
     background-color: blueviolet;
     color: white;
-    font-size: 30px;
+    
     border: none;
-    padding: 10px 40px 10px 40px;
+    /* padding: 10px 40px 10px 40px; */
+    font-size: 3vh;
+    width: 6vw;
+    height: 3vh;
     transition: all 0.5s;
     margin-top: 6%;
 }
@@ -89,6 +70,7 @@ body {
 #go-btn:hover {
     transform: scale(1.1);
     background-color: #312880;
+    cursor: pointer;
 }
 
 
@@ -100,20 +82,20 @@ body {
     overflow: hidden;
   }
 
-  .navbar a {
+.navbar a {
     float: right;
     color: #f2f2f2;
     text-align: center;
     padding: 25px 15px 25px 15px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 0.3%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Lato";
     transition: all 0.5s;
   }
 
 
-  .navbar a:hover {
+.navbar a:hover {
     background-color: white;
     color: rgb(7, 2, 67);
     /* height: 95px; */
@@ -136,37 +118,44 @@ body {
 
 .search-panel {
     /* background-color: #c3caf5;  */
-    background-color: #c98cf8;
-    padding: 120px 50px 120px 50px;
+    /* background-color: #c98cf8; */
+    background-color: #81DFE5;
+    /* padding: 120px 200px 120px 200px; */
+    width: 25vw;
+    height: 25vh;
     /* padding: 90px 50px 90px 50px; */
     /* padding: 1000px 567px 1000px 567px */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    /* justify-content: space-between; */
     opacity: 0.90;
     /* background-image: url(https://www.westernunion.com/blog/wp-content/uploads/2016/06/Travel_Abroad_01.jpg); */
-    background-attachment: fixed;
-    background-size: cover;
-
+    /* text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
 }
 
+
 .search-bar {
-    height: 100px;
-    display: flex;
-    flex-direction: row;
+    /* height: 100px; */
     /* gap: 100px; */
-    gap: 50px;
+    margin-top: 7%;
 }
 
 
 .form-modify {
     background-color: white;
-    width: 300px;
-    height: 44px;
+    /* width: 200px;
+    height: 44px; */
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 15vw;
+    height: 3vh;
 }
 
 input {
@@ -176,18 +165,92 @@ input {
     height: 100%;
     width: 100%;
     padding: 6px 10px;
+    align-items: center;
 }
-
 
 .label {
     /* font-family: "Caveat"; */
     font-family: 'Shadows Into Light', cursive;
-    font-size: 40px;
-    margin: 2%;
+    font-size: 2vw;
     color: white;
+}
+
+
+@media (max-width = 900px) {
+    .search-panel {
+        width: 90px;
+        height: 10px;
+    }
+
+    .form-modify {
+        width: 90%;
+        height: 90%;
+    }
+
+    .label {
+        width: 90%;
+        height: 90%;
+        font-size: medium;
+    }
+
+    #go-btn {
+        font-size: 1vh;
+        width: 6vw;
+        height: 3vh;
+    }
+
+
+}
+
+
+@media (max-width = 400px) {
+    .search-panel {
+        width: 90%;
+        height:90%;
+    }
+
+    .form-modify {
+        width: 90%;
+        height: 90%;
+    }
+
+    .label {
+        width: 90%;
+        height: 90%;
+    }
+
+    #go-btn {
+        font-size: 75%;
+    }
+}
+
+
+@media (max-width = 200px) {
+    .search-panel {
+        width: 90%;
+        height:90%;
+    }
+
+    .form-modify {
+        width: 90%;
+        height: 90%;
+    }
+
+    .label {
+        width: 90%;
+        height: 90%;
+    }
+
+    #go-btn {
+        font-size: 75%;
+    }
 }
 
 .trip-pla {
     width: 600px;
     align-items: center;
 }
+
+
+
+
