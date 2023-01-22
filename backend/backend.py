@@ -29,6 +29,8 @@ def index():
 @app.route("/map", methods = ["POST"])
 def button():
     if request.method == "POST":
+        m1 = request.form.get("q1")
+        m2 = request.form.get("q2")
         return redirect(url_for('map'))
 #return render_template('***')
 
