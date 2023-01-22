@@ -33,7 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 2vw
     /* background-size: auto; */
 }
 
@@ -60,11 +60,12 @@ body {
     
     border: none;
     /* padding: 10px 40px 10px 40px; */
-    font-size: 3vh;
+    font-size: 2.2vw;
     width: 6vw;
-    height: 3vh;
+    /* height: 3vh; */
     transition: all 0.5s;
     margin-top: 6%;
+    margin-bottom: 9%;
 }
 
 #go-btn:hover {
@@ -77,43 +78,45 @@ body {
 .navbar {
     /* width: 100%;
     height: 95px; */
-    background-color: rgb(7, 2, 67);
+    background-color: #81DEE5;
     /* overflow: auto; */
     overflow: hidden;
   }
 
 .navbar a {
     float: right;
-    color: #f2f2f2;
+    color: #312880;
     text-align: center;
     padding: 25px 15px 25px 15px;
     text-decoration: none;
     font-size: 25px;
-    margin-top: 0.3%;
+    margin-top: 0.6vw;
+    margin-bottom: 0.5vw;
     font-family: "Lato";
     transition: all 0.5s;
+    margin-right: 1%;
+    border: white;
+    border-radius: 10px;
   }
 
 
 .navbar a:hover {
     background-color: white;
-    color: rgb(7, 2, 67);
+    color: #81DEE5;
     /* height: 95px; */
   }
 
 .header {
-    font-family: "Lato";
-    font-size: 25px !important;
-    height: 130px;
-    line-height: 3px; 
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #81DEE5;
+    text-shadow: 4px 4px #1C418E;
+    font-size: 3vw !important;
     align-items: center;
+    max-width: 600px;
+    /* margin-bottom: 7%; */
     /* background-image: url(/frontend/Trip-removebg-preview.png);
     background-size: 50%;  */
-    
 }
-
-
-
 
 
 .search-panel {
@@ -121,8 +124,8 @@ body {
     /* background-color: #c98cf8; */
     background-color: #81DFE5;
     /* padding: 120px 200px 120px 200px; */
-    width: 25vw;
-    height: 25vh;
+    width: 40vw;
+    /* height: 25vh; */
     /* padding: 90px 50px 90px 50px; */
     /* padding: 1000px 567px 1000px 567px */
     border-radius: 20px;
@@ -142,7 +145,7 @@ body {
 .search-bar {
     /* height: 100px; */
     /* gap: 100px; */
-    margin-top: 7%;
+    margin-top: 9%;
 }
 
 
@@ -155,7 +158,6 @@ body {
     flex-direction: row;
     align-items: center;
     width: 15vw;
-    height: 3vh;
 }
 
 input {
@@ -170,12 +172,12 @@ input {
 
 .label {
     /* font-family: "Caveat"; */
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Lato', cursive;
     font-size: 2vw;
     color: white;
 }
 
-
+/* 
 @media (max-width = 900px) {
     .search-panel {
         width: 90px;
@@ -244,7 +246,7 @@ input {
     #go-btn {
         font-size: 75%;
     }
-}
+} */
 
 .trip-pla {
     width: 600px;
