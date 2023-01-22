@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href={{ url_for("static", filename= "style.css") }}>
+    <link rel="stylesheet" href={{ url_for("static", filename = "style.css") }}>
 
     <!-- Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,24 +14,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 
-    <!-- Barlow Condensed -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700&display=swap" rel="stylesheet">
-
-
-
-    
-
 
 </head>
 <body>
 
     <div class="navbar">
-        <img class="logo" src={{ url_for("static", filename = "transit-live-logo-removebg-preview.png") }} alt="transitlive logo">
+        <img class="logo" src={{ url_for('static', filename = "transit-live-logo-removebg-preview.png") }} alt="transitlive logo"
+        width = "90%", length = "90%">
         <a href="about">About</a>
+        <!-- <a href="contact">Contact</a> -->
         <!-- <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> -->
-      </div>
+    </div>
 
 
 
@@ -45,12 +38,9 @@
 
         <!-- This is the part for the header of the page -->
         <div class="header">
-            <!-- <center> 
-                <img class="trip-pla" src="/frontend/Trip-2-removebg-preview.png" alt="Plan Your Trip">
-            </center> -->
-            <center>
-                <p class="line1"> YOUR BUS LIKE A PRO, WITH OUR WEBSITE,  YOU'LL ALWAYS KNOW</p> 
-                </center>
+            <center> 
+                <img class="trip-pla" src={{ url_for('static', filename = "Trip-2-removebg-preview.png") }} alt="Plan Your Trip">
+            </center>
             </div>
         
 
@@ -66,12 +56,13 @@
                 <!-- This is the box to insert the 'from' location -->
                <center>
                 <div class="from">
-                <label class="label"> Bus Stop Number </label>
-                <form class="form-modify" action="form">
-                    <input type="search" id="from" name="q" placeholder="Enter Bus Stop No." aria-label="Search through site content">
-                </form>
-                 </div>
-             </center> 
+                    <label class="label"> Next Bus </label>
+                        <form class="form-modify" action="form">
+                            <input type="search" id="from" name="query" placeholder="Enter the Bus Stop No." aria-label="Search through site content">
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                </center> 
                
                 
 
@@ -82,31 +73,22 @@
                         <input type="search" id="to" name="q" placeholder="Enter To Location" aria-label="Search through site content">
                     </form>
                 </div> -->
-             </div>
+            </div>
 
 
             <!-- This is the GO button -->
             <center>
-                <form action = "{{ url_for('bus') }}" method = "post">
-                    <div class="buttn">
-                        <button id="go-btn">Go</button>
-                    </div>
+                <form action = "{{ url_for('bus') }}" method="POST">
+                   <div class="buttn">
+                       <button style="margin-top: 80px;" id="go-btn">Go</button>
+                   </div>
                 </form> 
-            </center>
+            </center> 
 
         </div>
         
     </div>
-
-
-    
-
-
-
-
 </body>
-
-
 </html>
 
 

@@ -26,20 +26,31 @@ def index():
     #return "MAIN PAGE"
 
 #Button
-@app.route("/map", methods = ["POST"])
+@app.route("/bus", methods = ["POST"])
 def button():
+    m = request.form.get("q")
     if request.method == "POST":
-        m1 = request.form.get("q1")
-        m2 = request.form.get("q2")
-        # m1 and m2 data dealing
-        return redirect(url_for('map'))
+        # m data dealing
+        return redirect(url_for('bus'))
 #return render_template('***')
 
-#Map
-@app.route("/map")
-def map():
-    return "MAP"
-    #return render_template('map.html')
+
+#Bus
+@app.route("/bus")
+def bus():
+    return render_template('main_mod.html')
+
+
+#Bus search
+@app.route('/form?query=<int:bus_id>')
+def search_bus(bus_id):
+    return f"This is the bus {bus_id}"
+    #return render_template('**')
+
+
+  #  bus = search_database(search_query, page)
+  #  return render_template('**HTML**', bus = bus)
+
 
 #About
 @app.route("/about")
@@ -84,21 +95,10 @@ def about():
 
 
 #Bus Page
-@app.route("/bus")
-def bus():
-    return "BUS"
-    #return render_template('***')
-
-
-#Bus search
-@app.route('/bus/<int:bus_id>')
-def search_bus(bus_id):
-    return f"This is the bus {bus_id}"
- #   return render_template('***')
-
-
-  #  bus = search_database(search_query, page)
-  #  return render_template('**HTML**', bus = bus)
+# @app.route("/bus")
+# def bus():
+#     return "BUS"
+#     #return render_template('***')
 
 
 #Stop Page
