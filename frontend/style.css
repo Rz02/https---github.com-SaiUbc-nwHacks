@@ -4,13 +4,47 @@ body {
     width: 100%;
     height: 100%; */
     margin: 0%;
-    background-image: url(https://www.translink.ca/-/media/translink/media-releases/2022/june/ct_bike_bus_exterior.jpg);
     
+    /* background-image: url(https://wwwnc.cdc.gov/travel/images/people-in-airport.jpg); */
+    /* background-size: 1500px 900px; */
+    /* background-size: auto; */
+    /* background: no-repeat center center cover;
+    background-repeat: no-repeat; */
+    background-image: url(https://www.vmcdn.ca/f/files/glaciermedia/import/lmp-all/1533121-buses-2136.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    /* position: absolute; */
+
+    /* background-size: 100vw 100vh; */
+    /* background-size: contain cover; */
+}
+
+
+
+/* .back-img {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+} */
+
+
+
+
+.Background {
+    grid-column: background;
+    grid-row: background;
+    display: block;
+    box-sizing: inherit;
 }
 
 .logo {
-    width: 150px;
-    height: 100px;
+    width: 140px; 
+    height: 90px; 
 }
 
 .logo {
@@ -22,21 +56,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     background-size: auto;
 }
 
 
-.b-image {
-    
-    background-size: auto
-}
-
-.tiledBackground {
-    
-    width: 0px;
-    height: 0px;
-  }
 
 
 .intro {
@@ -60,6 +83,7 @@ body {
     border: none;
     padding: 10px 40px 10px 40px;
     transition: all 0.5s;
+    margin-top: 6%;
 }
 
 #go-btn:hover {
@@ -69,20 +93,41 @@ body {
 
 
 .navbar {
-    width: 100%;
-    /* background-color: white; */
-    overflow: auto;
-    border-bottom: 2px solid #333;
+    /* width: 100%;
+    height: 95px; */
+    background-color: rgb(7, 2, 67);
+    /* overflow: auto; */
+    overflow: hidden;
+  }
+
+  .navbar a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 25px 15px 25px 15px;
+    text-decoration: none;
+    font-size: 30px;
+    margin-top: 0.3%;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.5s;
   }
 
 
+  .navbar a:hover {
+    background-color: white;
+    color: rgb(7, 2, 67);
+    /* height: 95px; */
+  }
+
 .header {
-    /* font-family: "Lato";
-    font-size: 25px !important; */
-    width: 100px;
-    height: 100px;
+    font-family: "Lato";
+    font-size: 25px !important;
+    height: 130px;
+    line-height: 3px; 
+    align-items: center;
     /* background-image: url(/frontend/Trip-removebg-preview.png);
-    background-size: 50%; */
+    background-size: 50%;  */
+    
 }
 
 
@@ -90,18 +135,18 @@ body {
 
 
 .search-panel {
-    background-color: #c3caf5;
-    padding: 90px 30px 90px 30px;
+    /* background-color: #c3caf5;  */
+    background-color: #c98cf8;
+    padding: 120px 50px 120px 50px;
     /* padding: 90px 50px 90px 50px; */
     /* padding: 1000px 567px 1000px 567px */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    background-image: url(/frontend/Panel\ Image.jpeg);
-    /* background-size: 700px 400px; */
-    background-size: 90%;
-    background-position: bottom;
-    /* opacity: 0.90; */
+    opacity: 0.90;
+    /* background-image: url(https://www.westernunion.com/blog/wp-content/uploads/2016/06/Travel_Abroad_01.jpg); */
+    background-attachment: fixed;
+    background-size: cover;
 
 }
 
@@ -113,7 +158,8 @@ body {
     gap: 50px;
 }
 
-form {
+
+.form-modify {
     background-color: white;
     width: 300px;
     height: 44px;
@@ -130,4 +176,18 @@ input {
     height: 100%;
     width: 100%;
     padding: 6px 10px;
+}
+
+
+.label {
+    /* font-family: "Caveat"; */
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 40px;
+    margin: 2%;
+    color: white;
+}
+
+.trip-pla {
+    width: 600px;
+    align-items: center;
 }
