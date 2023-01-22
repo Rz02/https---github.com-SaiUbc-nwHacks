@@ -1,0 +1,130 @@
+body {
+    margin: 0%;
+    background-image: url(https://www.vmcdn.ca/f/files/glaciermedia/import/lmp-all/1533121-buses-2136.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.logo {
+    align-items: center;
+    margin-left: 1%;
+    width: 140px; 
+    height: 90px; 
+}
+
+.website {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vw;
+}
+
+
+#go-btn {
+    border-radius: 12px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    font-size: 2.2vw;
+    width: 6vw;
+    transition: all 0.5s;
+    margin-top: 6%;
+    margin-bottom: 9%;
+}
+
+
+#go-btn:hover {
+    transform: scale(1.1);
+    background-color: #312880;
+    cursor: pointer;
+}
+
+
+.navbar {
+    background-color: #81DEE5;
+    overflow: hidden;
+  }
+
+
+.navbar a {
+    float: right;
+    color: #312880;
+    text-align: center;
+    padding: 25px 15px 25px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    margin-top: 0.6vw;
+    margin-bottom: 0.5vw;
+    font-family: "Lato";
+    transition: all 0.5s;
+    margin-right: 1%;
+    border: white;
+    border-radius: 10px;
+    letter-spacing: 1px;
+  }
+
+
+.navbar a:hover {
+    background-color: white;
+    color: #81DEE5;
+  }
+
+.header {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #81DEE5;
+    text-shadow: 4px 4px #1C418E;
+    font-size: 3vw !important;
+    align-items: center;
+    max-width: 600px;
+}
+
+
+.search-panel {
+    background-color: #81DFE5;
+    width: 40vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.90;
+}
+
+
+.search-bar {
+    margin-top: 9%;
+}
+
+
+.form-modify {
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 15vw;
+    height: 40px;
+    margin-top: 2%;
+}
+
+
+input {
+    all: unset;
+    font: 16px system-ui;
+    color: black;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+    align-items: center;
+}
+
+.label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 4vw;
+    color: #264089;
+    line-height: 100px;
+}
+
+
+
+

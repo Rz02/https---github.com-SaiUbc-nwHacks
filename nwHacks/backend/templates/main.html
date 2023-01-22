@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href={{ url_for("static", filename= "style.css") }}>
+
+    <!-- Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <!-- Caveat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+    <!-- Barlow Condensed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700&display=swap" rel="stylesheet">
+
+
+
+    
+
+
+</head>
+<body>
+
+    <div class="navbar">
+        <img class="logo" src={{ url_for("static", filename = "transit-live-logo-removebg-preview.png") }} alt="transitlive logo">
+        <a href="about">About</a>
+        <!-- <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> -->
+      </div>
+
+
+
+    <div class="website">
+
+        <!-- This is the box for the logo to be in serted in the middle of the website -->
+        <!-- <div class="logo">
+            <img class="profile" src="transit-live-logo.jpeg" alt="transitlive logo">
+        </div> -->
+
+
+        <!-- This is the part for the header of the page -->
+        <div class="header">
+            <!-- <center> 
+                <img class="trip-pla" src="/frontend/Trip-2-removebg-preview.png" alt="Plan Your Trip">
+            </center> -->
+            <center>
+                <p class="line1"> YOUR BUS LIKE A PRO, WITH OUR WEBSITE,  YOU'LL ALWAYS KNOW</p> 
+                </center>
+            </div>
+        
+
+        <!-- This is the search panel where from, to and go bars would be there -->
+        <div class="search-panel">
+
+            <!-- This is the part for the intro -->
+            <!-- <div class="intro">
+                <p>Use the boxes below and go where the **** you want</p>
+            </div> -->
+
+            <div class="search-bar">
+                <!-- This is the box to insert the 'from' location -->
+               <center>
+                <div class="from">
+                <label class="label"> Bus Stop Number </label>
+                <form class="form-modify" action="form">
+                    <input type="search" id="from" name="q" placeholder="Enter Bus Stop No." aria-label="Search through site content">
+                </form>
+                 </div>
+             </center> 
+               
+                
+
+                <!-- This is the box to insert the 'to' location -->
+                <!-- <div class="to">
+                    <label class="label">To</label>
+                    <form class="form-modify" action="form">
+                        <input type="search" id="to" name="q" placeholder="Enter To Location" aria-label="Search through site content">
+                    </form>
+                </div> -->
+             </div>
+
+
+            <!-- This is the GO button -->
+            <center>
+                <form action = "{{ url_for('bus') }}" method = "post">
+                    <div class="buttn">
+                        <button id="go-btn">Go</button>
+                    </div>
+                </form> 
+            </center>
+
+        </div>
+        
+    </div>
+
+
+    
+
+
+
+
+</body>
+
+
+</html>
+
+
+<!-- #312880 - hex code of colour of the bus-->
+
