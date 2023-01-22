@@ -47,12 +47,6 @@ def about():
     #return "ABOUT"
     return render_template('about.html')
 
-#Contact
-@app.route("/contact")
-def contact():
-    #return "CONTACT"
-    return render_template('contact.html')
-
 
 #Search Page (For general sketch)
 # @app.route('/search/<name>')
