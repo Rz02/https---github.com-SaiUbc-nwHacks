@@ -7,25 +7,36 @@ routes = ['R4', '2', '3', '4', '5', '6', '7', '8', '9', '10', '14', '15', '16', 
 # print(buses)
 
 
-fourDigitBuses = []
+## Maybe a function that accepts a stop number and returns a list of the current coordinates of the buses that service that stop for a specific route (only if that route has available buses)
 
-for route in routes:
+
+def stopCoords(stop_num):
+    stop = api.stop(stop_num)
+    return (stop.Latitude, stop.Longitude) #TODO wheelchair access??
+
+def busCoords(route_num):
+    busesCoords = []
+    
     try:
-        buses = api.buses(route_number = route)
+        buses = api.buses(route_number = route_num)
         for bus in buses:
             if eval(bus.VehicleNo)//1000<=9:
-                fourDigitBuses.append(bus)
+                busesCoords.append((bus.Latitude, bus.Longitude))
+
                 
     except TransLinkAPIError:
         print("sorry your buses for route " + route +  " cannot be found")
+    
+    finally:
+        return busesCoords
 
-for bus in fourDigitBuses:
-    print(bus.Latitude, bus.Longitude)
 
 
-stop = api.stop('53095')
-print("LAT" + str(stop.Latitude))
-print("LONG" + str(stop.Longitude))
+
+
+# stop = api.stop('53095')
+# print("LAT" + str(stop.Latitude))
+# print("LONG" + str(stop.Longitude))
 
 
 #vehicles = api.vehicles_by_route(25)
