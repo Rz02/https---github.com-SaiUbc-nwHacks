@@ -31,6 +31,7 @@ def button():
     if request.method == "POST":
         m1 = request.form.get("q1")
         m2 = request.form.get("q2")
+        # m1 and m2 data dealing
         return redirect(url_for('map'))
 #return render_template('***')
 
@@ -38,7 +39,20 @@ def button():
 @app.route("/map")
 def map():
     return "MAP"
-    # return render_template('***')
+    #return render_template('map.html')
+
+#About
+@app.route("/about")
+def about():
+    #return "ABOUT"
+    return render_template('about.html')
+
+#Contact
+@app.route("/contact")
+def contact():
+    #return "CONTACT"
+    return render_template('contact.html')
+
 
 #Search Page (For general sketch)
 # @app.route('/search/<name>')
@@ -125,17 +139,6 @@ def search_route(sta_id):
 @app.route("/qanda")
 def qanda():
     return "Q&A"
-    #return render_template('***')
-
-
-#Contact Page
-@app.route("/qanda/contact", methods = ['GET','POST'])
-def contact():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        email = request.form.get('email')
-        message = request.form.get('message')
-    return "CONTACT"
     #return render_template('***')
 
 if __name__ == "__main__":
