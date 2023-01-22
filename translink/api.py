@@ -6,12 +6,27 @@ routes = ['R4', '2', '3', '4', '5', '6', '7', '8', '9', '10', '14', '15', '16', 
 # buses = api.buses(route_number = 109)
 # print(buses)
 
-for route in routes:
-    
-        numBuses = api.buses(route_number = route)
-        print(numBuses)
 
-    
+fourDigitBuses = []
+
+for route in routes:
+    try:
+        buses = api.buses(route_number = route)
+        for bus in buses:
+            if eval(bus.VehicleNo)//1000<=9:
+                fourDigitBuses.append(bus)
+                
+    except TransLinkAPIError:
+        print("sorry your buses for route " + route +  " cannot be found")
+
+for bus in fourDigitBuses:
+    print(bus.Latitude, bus.Longitude)
+
+
+stop = api.stop('53095')
+print("LAT" + str(stop.Latitude))
+print("LONG" + str(stop.Longitude))
+
 
 #vehicles = api.vehicles_by_route(25)
 # vehicle_ids = [vehicle.VehicleNo for vehicle in buses]
