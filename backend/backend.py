@@ -4,38 +4,39 @@ import csv
 from flask_sqlalchemy import SQLAlchemy
 
 
-app = Flask(__name__)
-app.config['***'] = '***'
-db = SQLAlchemy(app)
+app = Flask(__name__, static_folder='static')
+# app.config['***'] = '***'
+# db = SQLAlchemy(app)
 
 
-#Define Database with id, bus, stop and route
-class User(db.Model):
-    id = db.Column(db.Integer, primary_jey = True)
-    bus = db.Column(db.Integer, unique = True, nullable = False)
-    stop = db.Column(db.String(80), unique = True, nullable = False)
-    route = db.Column(db.String(80), unique = True, nullable = False)
-    def __repr__(self):
-        return '<User %r>' % self.name
+# Define Database with id, bus, stop and route
+# class User(db.Model):
+#     id = db.Column(db.Integer, primary_jey = True)
+#     bus = db.Column(db.Integer, unique = True, nullable = False)
+#     stop = db.Column(db.String(80), unique = True, nullable = False)
+#     route = db.Column(db.String(80), unique = True, nullable = False)
+#     def __repr__(self):
+#         return '<User %r>' % self.name
 
 
 #Main Page
 @app.route("/")
 def index():
-    return render_template('***')
-
+    return render_template('main.html')
+    #return "MAIN PAGE"
 
 #Map Page
 @app.route("/map")
 def map():
-    return render_template('***')
+    return "MAP"
+    #return render_template('***')
 
 
 #Search Page (For general sketch)
-@app.route('/search/<name>')
-def search(name):
-    user = User.query.filter_by(name = name).first()
-    return render_template('***', user = user)
+# @app.route('/search/<name>')
+# def search(name):
+#     user = User.query.filter_by(name = name).first()
+#     return render_template('***', user = user)
 
 
 # dynamic route: 
@@ -58,18 +59,19 @@ def search(name):
 
 
 #API Checking
-valid_api_keys = {}
-@app.route('/<api_key>/secure_route')
-def secure_route(api_key):
-    if api_key not in valid_api_keys:
-        return jsonify(error = "Invalid API key"), 401
-    return "This is a secure route"
+# valid_api_keys = {}
+# @app.route('/<api_key>/secure_route')
+# def secure_route(api_key):
+#     if api_key not in valid_api_keys:
+#         return jsonify(error = "Invalid API key"), 401
+#     return "This is a secure route"
 
 
 #Bus Page
 @app.route("/bus")
 def bus():
-    return render_template('***')
+    return "BUS"
+    #return render_template('***')
 
 
 #Bus search
@@ -86,7 +88,8 @@ def search_bus(bus_id):
 #Stop Page
 @app.route("/stop")
 def stop():
-    return render_template('***')
+    return "STOP"
+    #return render_template('***')
 
 
 #Stop search
@@ -99,7 +102,8 @@ def search_stop(stop_id):
 #Route Page
 @app.route("/route")
 def route():
-    return render_template('***')
+    return "ROUTE"
+    #return render_template('***')
 
 
 #Route search
@@ -112,7 +116,8 @@ def search_route(sta_id):
 #Q&A Page
 @app.route("/qanda")
 def qanda():
-    return render_template('***')
+    return "Q&A"
+    #return render_template('***')
 
 
 #Contact Page
@@ -122,7 +127,8 @@ def contact():
         name = request.form.get('name')
         email = request.form.get('email')
         message = request.form.get('message')
-    return render_template('***')
+    return "CONTACT"
+    #return render_template('***')
 
 if __name__ == "__main__":
     app.run(debug=True)
