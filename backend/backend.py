@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 import functools
 import csv
 from flask_sqlalchemy import SQLAlchemy
@@ -25,12 +25,18 @@ def index():
     return render_template('main.html')
     #return "MAIN PAGE"
 
-#Map Page
+#Button
+@app.route("/map", methods = ["POST"])
+def button():
+    if request.method == "POST":
+        return redirect(url_for('map'))
+#return render_template('***')
+
+#Map
 @app.route("/map")
 def map():
     return "MAP"
-    #return render_template('***')
-
+    # return render_template('***')
 
 #Search Page (For general sketch)
 # @app.route('/search/<name>')
