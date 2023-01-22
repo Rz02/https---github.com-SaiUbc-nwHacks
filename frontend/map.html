@@ -15,12 +15,15 @@
         });
 
         busMarker = new google.maps.Marker({
-          position: {lat: 49.254297683846445, lng:-123.14777374701548},
+          position: {lat: 49.26404453901906, lng:-123.25025558741059},
           map: map
         });
       }
 
       setInterval(function() {
+        busMarker.setTimeout(() => {
+            busMarker.setVisible(false);
+        }, 5000);
         fetch('/bus_location/' + busMarker.getPosition().lat() + '/' + busMarker.getPosition().lng())
           .then(function(response) {
             return response.text();
